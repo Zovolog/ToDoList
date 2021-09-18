@@ -24,7 +24,7 @@ ul {
 .total {
   margin-top: 5%;
 }
-.li {
+.task {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,7 +39,7 @@ ul {
   margin: 10px 0;
   cursor: pointer;
 }
-.btn {
+.btn-delete {
   display: block;
   color: white;
   background-color: #a93576;
@@ -48,20 +48,21 @@ ul {
   height: 30px;
   cursor: pointer;
 }
-.li-active {
+.task-active {
   background: black;
   text-decoration: line-through;
   cursor: pointer;
 }
-.li-active .btn {
+.task-active .btn-delete {
   background: black;
   text-decoration: line-through;
+  border: 2px solid white;
 }
 span {
   color: white;
   font-size: 20px;
 }
-#btn {
+.add-task {
   width: 170px;
   height: 30px;
   border: none;

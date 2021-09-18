@@ -1,9 +1,9 @@
 const input = document.querySelector('#input');
-const btn = document.querySelector('#btn');
+const btnAddElement = document.querySelector('#btn');
 const result = document.querySelector('#result');
 const total = document.querySelector('#total');
 let i = 0;
-btn.addEventListener('click',(e)=>{
+btnAddElement.addEventListener('click',(e)=>{
   if(input.value === '') return;
   createDeleteElements(input.value)
   input.value = ''
@@ -11,25 +11,25 @@ btn.addEventListener('click',(e)=>{
 
 function createDeleteElements(value){
   i++
-  const li = document.createElement(`li`);
-  const btn = document.createElement(`button`);
-  li.className = `li`;
-  li.textContent = value
+  const task = document.createElement(`li`);
+  const btnDeleteElement = document.createElement(`button`);
+  task.className = `task`;
+  task.textContent = value
 
-  btn.className = `btn`;
-  btn.textContent = `Удалить`;
-  li.appendChild(btn);
+  btnDeleteElement.className = `btn-delete`;
+  btnDeleteElement.textContent = `Удалить`;
+  task.appendChild(btnDeleteElement);
 
-  btn.addEventListener('click', e=>{
+  btnDeleteElement.addEventListener('click', e=>{
     i--
     total.textContent = i;
-    result.removeChild(li);
+    result.removeChild(task);
   })
 
-  li.addEventListener('click',(e)=>{
-    li.classList.toggle(`li-active`)
+  task.addEventListener('click',(e)=>{
+    task.classList.toggle(`task-active`)
   })
 
   total.textContent = i;
-  result.appendChild(li)
+  result.appendChild(task)
 }
